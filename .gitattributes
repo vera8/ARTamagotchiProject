@@ -13,7 +13,6 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
-
 # ------------------------
 # LFS
 #-------------------------
@@ -41,6 +40,7 @@
 *.psd filter=lfs -crlf
 *.tga filter=lfs -crlf
 *.tif filter=lfs -crlf
+Packages/com.ptc.vuforia.engine-10.1.4.tgz filter=lfs diff=lfs merge=lfs -text
 *.gitignore filter=lfs diff=lfs merge=lfs -text
 *.xml filter=lfs diff=lfs merge=lfs -text
 *.iml filter=lfs diff=lfs merge=lfs -text
