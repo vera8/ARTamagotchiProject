@@ -1,3 +1,26 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b81e4dc3302f4599ba69e82694f21ed067529a7306e4e8485d0ebb87483712a3
-size 738
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Tombstone : MonoBehaviour
+{
+    public TextMeshPro tombstoneText;
+
+    public TextMeshProUGUI message;
+    // Start is called before the first frame update
+    void Start()
+    {
+        BlobData blobData = DataManager.Load();
+        tombstoneText.text = "Here lies\n"+ blobData.name + "\nCause of death\nLoneliness";
+        message.text =
+            "Your beloved" + blobData.name + "has patently waited for you to return, but here is only so long an innocent Blob can survive on its own...";
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
