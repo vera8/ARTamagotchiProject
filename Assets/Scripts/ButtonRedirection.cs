@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:1be4d61e9b26df8fc50f2fdf29d8efe710d0b4b027c04bba36702a6e249e26ba
-size 729
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class ButtonRedirection : MonoBehaviour
+{
+    // Start is called before the first frame update
+    public void PlayGame() {       
+        if(!File.Exists(DataManager.path)) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        } else {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        }
+    }
+
+    public void QuitGame() {
+        Debug.Log("Quit!");
+        Application.Quit();
+    }
+
+    public void Adopt() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void LoadMenu() {
+        SceneManager.LoadScene(0);
+    }
+}
