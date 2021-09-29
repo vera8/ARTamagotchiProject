@@ -452,6 +452,8 @@ GameObject:
   - component: {fileID: 2131500273909601904}
   - component: {fileID: 2131500273909601907}
   - component: {fileID: 2131500273909601901}
+  - component: {fileID: 6687606524722058313}
+  - component: {fileID: 6871210796680917111}
   m_Layer: 0
   m_Name: Bob the Blob
   m_TagString: Untagged
@@ -536,6 +538,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.3
+  loveSystem: []
+  gameManager: {fileID: 0}
+--- !u!114 &6687606524722058313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130795481528073558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95fc112146600a47a0fb1ff44e9d59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nickname: 
+  hungerSpeed: 0
+  hungerStatus: 100
+  colorValue: 0
+  mood: 0
+--- !u!114 &6871210796680917111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130795481528073558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d5325d5f01256429bf82a73ee80d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotatingSpeed: 1
+  rotate: 1
 --- !u!1 &2130846058939679894
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +621,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 507d4aa237c275a48b72e5772879be66, type: 2}
+  - {fileID: 2100000, guid: db578f39499ab3e48bd2ef75cc4ce442, type: 2}
+  - {fileID: 2100000, guid: 0a297012b6345d9419aad2f99ce1d393, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
