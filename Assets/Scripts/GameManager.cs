@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (blob.GetMood() == Blob.Mood.Dead)
+        {
+            StartCoroutine(GameOver());
+        }
     }
 
     public void NotifyFoodPlacement(Vector3 position)
@@ -61,4 +65,10 @@ public class GameManager : MonoBehaviour
     {
         return foodPosition;
     }
+        IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene("Death Scene");
+    }
 }
+
