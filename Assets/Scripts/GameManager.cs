@@ -70,5 +70,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(5);
         SceneManager.LoadScene("Death Scene");
     }
+
+    
 }
 

@@ -27,4 +27,8 @@ public class ButtonRedirection : MonoBehaviour
     public void LoadMenu() {
         SceneManager.LoadScene(0);
     }
+
+    public void DeleteBlob() {
+        DataManager.DeleteSave();
+    }
 }

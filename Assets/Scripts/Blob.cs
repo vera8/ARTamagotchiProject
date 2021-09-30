@@ -29,10 +29,14 @@ public class Blob : MonoBehaviour
     } 
     private Mood mood = Mood.Happy;
     // Start is called before the first frame update
-    void Start()
-    {
+
+    void Awake() {
         rend = transform.Find("TurtleShell").gameObject.GetComponent<SkinnedMeshRenderer>();
         shellMaterial = rend.materials[0];
+    }
+
+    void Start()
+    {
         hungerCounter = hungerSpeed;
         if (lastCuddle == DateTime.MinValue)
         {
@@ -102,6 +106,10 @@ public class Blob : MonoBehaviour
         this.changeShellColor(data.shellColorValue);
         this.hungerStatus = data.hungerStatus;
         this.mood = data.mood;
+    }
+
+    public void SaveBlob() {
+        DataManager.Save(this);
     }
 
     public float GetHunger() {
