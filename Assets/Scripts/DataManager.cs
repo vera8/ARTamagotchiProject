@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f674073bb47c50b6cb7101b27aadcd18962ad4a70ec120b95787f39859150c0e
-size 1031
+using UnityEngine;
+using UnityEditor;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+public static class DataManager {
+
+    public static string path = Application.persistentDataPath + "/blob.bin";
+    public static void Save(Blob bob) {
+        Debug.Log("The save file location: " + path);
+        BinaryFormatter formatter = new BinaryFormatter();
+        FileStream stream = new FileStream(path, FileMode.Create);
+        BlobData data = new BlobData(bob);
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+
+    
+    public static BlobData Load() {
+        if (File.Exists(path)) {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            BlobData data = formatter.Deserialize(stream) as BlobData;
+            stream.Close();
+            return data;
+        } else {
+            Debug.LogError("Save file not found.");
+            return null;
+        }
+    }
+
+    public static void DeleteSave() {
+        File.Delete(path);
+    }
+}
