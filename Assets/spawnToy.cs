@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:48133aaff2517561c9a4cc3f0c3b6e6a5559dd9c9a22ff5b1cfe908e627793ae
-size 423
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class spawnToy : MonoBehaviour
+{
+    public GameObject toy;
+    private Vector3 spawnPos = new Vector3(0,0,0);
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Invoke ("Reset", 5.0f);
+    }
+
+    
+}

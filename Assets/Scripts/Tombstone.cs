@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Tombstone : MonoBehaviour
 {
-    public TextMeshPro tombstoneText;
+    public Text tombstoneText;
 
     public TextMeshProUGUI message;
     // Start is called before the first frame update
@@ -15,7 +15,7 @@ public class Tombstone : MonoBehaviour
         BlobData blobData = DataManager.Load();
         tombstoneText.text = "Here lies\n"+ blobData.name + "\nCause of death\nLoneliness";
         message.text =
-            "Your beloved" + blobData.name + "has patently waited for you to return, but here is only so long an innocent Blob can survive on its own...";
+            "Your beloved" + blobData.name + "has patiently waited for you to return, but here is only so long an innocent Blob can survive on its own...";
     }
 
     // Update is called once per frame
